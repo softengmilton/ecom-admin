@@ -54,12 +54,13 @@ include '../config/Session.php';
                                     $password = $_POST['password'];
                                     $confirm_password = $_POST['confirm_password'];
                                     $terms_accepted = isset($_POST['terms_accepted']) ? 1 : 0;
+                                    $user_type = 'admin';
 
                                     // Password validation (check if passwords match)
                                     if ($password !== $confirm_password) {
                                         echo "<script>alert('Passwords do not match.')</script>";
                                     } else {
-                                        $query = "INSERT INTO users (first_name, last_name, email, password, terms_accepted) VALUES ('$first_name', '$last_name', '$email', '$password', '$terms_accepted')";
+                                        $query = "INSERT INTO users (first_name, last_name, email, password,user_type, terms_accepted) VALUES ('$first_name', '$last_name', '$email', '$password', '$user_type','$terms_accepted')";
                                         $stmt = $conn->prepare($query);
 
                                         if ($stmt) {

@@ -20,8 +20,8 @@
                             </ul>
                     </li>
 
-                    <li><a class="m-link" href="product-add.php"><i class="icofont-truck-loaded fs-5"></i><span>Order</span></a></li>
-                    <li><a class="m-link" href="product-add.php"><i class="icofont-funky-man fs-5"></i> <span>Users</span></a></li>
+                    <li><a class="m-link" href="order.php"><i class="icofont-truck-loaded fs-5"></i><span>Order</span></a></li>
+                    <li><a class="m-link" href="customer.php"><i class="icofont-funky-man fs-5"></i> <span>Customers</span></a></li>
                 </ul>
                 <!-- Menu: menu collepce btn -->
                 <button type="button" class="btn btn-link sidebar-mini-btn text-light">

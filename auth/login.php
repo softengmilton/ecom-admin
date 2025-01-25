@@ -9,16 +9,17 @@ $errorMessage = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $query = "SELECT * FROM users WHERE email='$email' AND password='$password' ORDER BY users.id";
+    $query = "SELECT * FROM users WHERE email='$email' AND password='$password' AND user_type='admin' ORDER BY users.id";
     $result = $conn->query($query);
 
     if ($result && $result->num_rows > 0) {
         $value = $result->fetch_assoc();
 
-        Session::set("login",true);
+        Session::set("login", true);
         Session::set("email", $value['email']);
         Session::set("name", $value['first_name']);
-        header("Location: /admin/index.php");
+        Session::set('user_type',$value['user_type']);
+        header("Location: /ecomerce/admin/index.php");
     } else {
         $errorMessage = "Credentials do not match. Please try again.";
     }
@@ -26,11 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <html>
+
 <head>
     <link rel="icon" href="../favicon.ico" type="image/x-icon"> <!-- Favicon-->
     <!-- project css file -->
     <link rel="stylesheet" href="../assets/css/ebazar.style.min.css">
 </head>
+
 <body>
     <div id="ebazar-layout" class="theme-blue">
         <!-- main body area -->
@@ -121,4 +124,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Jquery Core Js -->
     <script src="../assets/bundles/libscripts.bundle.js"></script>
 </body>
+
 </html>

@@ -4,7 +4,7 @@ Session::checkSession();
 
 if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     session_destroy(); // Destroy session
-    header("Location:/admin/auth/login.php"); 
+    header("Location:/ecomerce/admin/auth/login.php"); 
     exit();
 }
 ?>

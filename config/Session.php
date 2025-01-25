@@ -18,14 +18,14 @@ class Session{
 
     public static function checkSession(){
         self::init();
-        if(self::get('login') != true){
+        if(self::get('login') != true || self::get('user_type') != 'admin'){
             self::logout();
         }
     }
 
     public static function logout(){
         session_destroy();
-        header("Location:/admin/auth/login.php"); 
+        header("Location:/ecomerce/admin/auth/login.php"); 
         exit();
     }
 }
