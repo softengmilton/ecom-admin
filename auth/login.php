@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         Session::set("login",true);
         Session::set("email", $value['email']);
         Session::set("name", $value['first_name']);
-        header("Location: /ecom-admin/index.php");
+        header("Location: /admin/index.php");
     } else {
         $errorMessage = "Credentials do not match. Please try again.";
     }
