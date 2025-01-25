@@ -33,10 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Insert data into the database
-    $stmt = $conn->prepare("INSERT INTO products (name, page_title, url, description, old_price, new_price, coupon_code, visibility, sizes, images, color) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssddsssss", $product_name, $page_title, $product_url, $description, $old_price, $new_price, $coupon_code, $visibility_status, $sizes, $images, $color);
+    $stmt = $conn->prepare("INSERT INTO products (name, page_title, url, description, old_price, new_price, coupon_code, visibility, sizes, images, color) VALUES ('$product_name', '$page_title', '$product_url', '$description', '$old_price', '$new_price', '$coupon_code', '$visibility_status', '$sizes', '$images', '$color')");
+   
 
     if ($stmt->execute()) {
+        header('Location: product-list.php');
+        exit;  
         echo "<div class='alert alert-success'>Product added successfully!</div>";
     } else {
         echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";

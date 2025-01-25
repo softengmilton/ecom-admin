@@ -1,6 +1,8 @@
 <?php
 // Define the content for this page
 ob_start();
+// include 'config/Session.php';
+// Session::checkSession();
 ?>
 <div class="row g-3 mb-3 row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-4">
                         <div class="col">

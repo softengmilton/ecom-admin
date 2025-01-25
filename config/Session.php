@@ -25,5 +25,7 @@ class Session{
 
     public static function logout(){
         session_destroy();
+        header("Location:/ecom-admin/auth/login.php"); 
+        exit();
     }
 }

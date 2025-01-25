@@ -70,7 +70,7 @@ if ($result && $result->num_rows > 0):
                                 <a href="product-detail.php?id=<?php echo $product['id']; ?>" class="btn btn-info btn-sm me-2 d-flex align-items-center">
                                     <i class="bi bi-eye me-1"></i> View
                                 </a>
-                                <a href="edit-product.php?id=<?php echo $product['id']; ?>" class="btn btn-warning btn-sm me-2 d-flex align-items-center">
+                                <a href="product-edit.php?id=<?php echo $product['id']; ?>" class="btn btn-warning btn-sm me-2 d-flex align-items-center">
                                     <i class="bi bi-pencil me-1"></i> Edit
                                 </a>
                                 <a href="?delProductid=<?php echo $product['id']; ?>" 
